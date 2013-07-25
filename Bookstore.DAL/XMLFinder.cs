@@ -50,7 +50,6 @@ namespace Bookstore.DAL
 				{
 					List<Review> resultByPeriod = FindReviewsByPeriod(queryNode);
 					result.Add(resultByPeriod);
-
 				}
 				else
 				{
@@ -68,6 +67,8 @@ namespace Bookstore.DAL
 			DateTime endPeriod = DateTime.ParseExact(queryNode.GetChildText("end-date"), "d-MMM-yyyy", CultureInfo.InvariantCulture);
 			List<Review> result = BookstoreDAL.FindReviewsByPeriod(startPeriod, endPeriod);
 
+			BookstoreLogsDAL.LogSearch(queryNode.OuterXml);
+
 			return result;
 		}
 
@@ -75,6 +76,8 @@ namespace Bookstore.DAL
 		{
 			string authorName = queryNode.GetChildText("author-name");
 			List<Review> result = BookstoreDAL.FindReviewsByAuthor(authorName);
+
+			BookstoreLogsDAL.LogSearch(queryNode.OuterXml);
 
 			return result;
 		}

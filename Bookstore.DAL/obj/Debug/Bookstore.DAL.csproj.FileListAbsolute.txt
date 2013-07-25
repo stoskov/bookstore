@@ -8,3 +8,7 @@ D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\bi
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\obj\Debug\Bookstore.DAL.csprojResolveAssemblyReference.cache
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\obj\Debug\Bookstore.DAL.dll
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\obj\Debug\Bookstore.DAL.pdb
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\bin\Debug\Bookstore.Log.Data.dll
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\bin\Debug\Bookstore.Log.Model.dll
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\bin\Debug\Bookstore.Log.Data.pdb
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.DAL\bin\Debug\Bookstore.Log.Model.pdb

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookstoreDAL.cs" />
+    <Compile Include="BookstoreLogsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLExtensions.cs" />
     <Compile Include="XMLLoader.cs" />
@@ -56,6 +57,14 @@
     <ProjectReference Include="..\Bookstore.Data\Bookstore.Data.csproj">
       <Project>{8cf48c4f-9e9e-4617-9697-c424db01d4ad}</Project>
       <Name>Bookstore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookstore.Log.Data\Bookstore.Log.Data.csproj">
+      <Project>{672de9b5-6aa5-4fa1-bb1e-1e289db50234}</Project>
+      <Name>Bookstore.Log.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookstore.Log.Model\Bookstore.Log.Model.csproj">
+      <Project>{c092ff30-9a31-4283-88ef-aaed88fa203a}</Project>
+      <Name>Bookstore.Log.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

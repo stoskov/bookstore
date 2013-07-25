@@ -10,3 +10,7 @@ D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\obj\Debug\Bookstore.Client.csprojResolveAssemblyReference.cache
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\obj\Debug\Bookstore.Client.exe
 D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\obj\Debug\Bookstore.Client.pdb
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\bin\Debug\Bookstore.Log.Data.dll
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\bin\Debug\Bookstore.Log.Model.dll
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\bin\Debug\Bookstore.Log.Data.pdb
+D:\Work\Courses\01 - Current\Databases\Practical Exam\Bookstore\Bookstore.Client\bin\Debug\Bookstore.Log.Model.pdb
