@@ -102,5 +102,31 @@ namespace Bookstore.DAL
 
 			return booksQuery.ToList();
 		}
+
+		public static List<Review> FindReviewsByPeriod(DateTime startPeriod, DateTime endPeriod)
+		{
+			BookstoreEntities context = new BookstoreEntities();
+
+			var reviews = from r in context.Reviews
+						  where r.Date >= startPeriod && r.Date <= endPeriod
+						  orderby r.Date, r.Text
+						  select r;
+
+
+			return reviews.ToList();
+		}
+
+		public static List<Review> FindReviewsByAuthor(string authorName)
+		{
+			BookstoreEntities context = new BookstoreEntities();
+
+			var reviews = from r in context.Reviews
+						  join a in context.Authors on r.AuthorId equals a.AuthorId
+						  where a.Name == authorName
+						  orderby r.Date, r.Text 
+						  select r;
+
+			return reviews.ToList();
+		}
 	}
 }

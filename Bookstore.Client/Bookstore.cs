@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using Bookstore.DAL;
+using System.Collections.Generic;
+using Bookstore.Data;
 
 namespace Bookstore.Client
 {
@@ -20,7 +22,8 @@ namespace Bookstore.Client
 			XMLFinder.FindBooks(@"..\..\xml\simple-query2.xml");
 
 			//Task6
-			//XMLFinder.FindReviews(@"..\..\xml\reviews-queries.xml", @"..\..\xml\reviews-search-results.xml");
+			List<List<Review>> searchResult = XMLFinder.FindReviews(@"..\..\xml\reviews-queries.xml");
+			XMLWriter.WriteReviewsToFile(searchResult, @"..\..\xml\reviews-search-results.xml");
 		}
 	}
 }

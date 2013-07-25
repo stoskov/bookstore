@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Xml;
 using Bookstore.Data;
@@ -20,6 +21,7 @@ namespace Bookstore.DAL
 			List<Book> books = BookstoreDAL.FindBooksByTitleAuthorIsbn(title, authorName, isbn);
 			if (books.Count > 0)
 			{
+				Console.WriteLine("{0} books found:", books.Count());
 				foreach (Book book in books)
 				{
 					Console.WriteLine(book.Title);
@@ -31,38 +33,50 @@ namespace Bookstore.DAL
 			}
 		}
 
-		//public static void FindReviews(string queryPath, string resultPath)
-		//{
-		//	XmlDocument xmlDoc = new XmlDocument();
-		//	xmlDoc.Load(queryPath);
+		public static List<List<Review>> FindReviews(string filePath)
+		{
+			List<List<Review>> result = new List<List<Review>>();
 
-		//	XmlNodeList queryList = xmlDoc.SelectNodes("query");
+			XmlDocument xmlDoc = new XmlDocument();
+			xmlDoc.Load(filePath);
 
-		//	foreach (XmlNode queryNode in queryList)
-		//	{
-		//		var authorNameAttribure = reviewNode.Attributes["author"];
+			XmlNodeList queryList = xmlDoc.SelectNodes("review-queries/query");
 
-		//		string authorName = queryNode.GetChildText("author");
-		//		VerifyNodeExistance("author", authorName);
+			foreach (XmlNode queryNode in queryList)
+			{
+				var searchType = queryNode.Attributes["type"].Value;
 
-		//		string title = queryNode.GetChildText("title");
-		//		VerifyNodeExistance("title", title);
+				if (searchType == "by-period")
+				{
+					List<Review> resultByPeriod = FindReviewsByPeriod(queryNode);
+					result.Add(resultByPeriod);
 
-		//		string isbn = queryNode.GetChildText("isbn");
-		//		string webSite = queryNode.GetChildText("web-site");
+				}
+				else
+				{
+					List<Review> resultByAuthor = FindReviewsByAuthor(queryNode);
+					result.Add(resultByAuthor);
+				}
+			}
 
-		//		decimal? price = null;
-		//		string priceString = queryNode.GetChildText("price");
-		//		if (priceString != null)
-		//		{
-		//			price = decimal.Parse(priceString);
-		//		}
+			return result;
+		}
 
-		//		List<string> authors = new List<string>();
-		//		authors.Add(authorName);
+		private static List<Review> FindReviewsByPeriod(XmlNode queryNode)
+		{
+			DateTime startPeriod = DateTime.ParseExact(queryNode.GetChildText("start-date"), "d-MMM-yyyy", CultureInfo.InvariantCulture);
+			DateTime endPeriod = DateTime.ParseExact(queryNode.GetChildText("end-date"), "d-MMM-yyyy", CultureInfo.InvariantCulture);
+			List<Review> result = BookstoreDAL.FindReviewsByPeriod(startPeriod, endPeriod);
 
-		//		Book book = BookstoreDAL.AddBook(title, isbn, price, webSite, authors);
-		//	}
+			return result;
+		}
 
+		private static List<Review> FindReviewsByAuthor(XmlNode queryNode)
+		{
+			string authorName = queryNode.GetChildText("author-name");
+			List<Review> result = BookstoreDAL.FindReviewsByAuthor(authorName);
+
+			return result;
+		}
 	}
 }
