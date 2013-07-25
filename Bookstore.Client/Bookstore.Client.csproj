@@ -65,10 +65,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\complex-books.xml" />
-    <Content Include="data\simple-query2.xml" />
-    <Content Include="data\simple-books.xml" />
-    <Content Include="data\simple-query1.xml" />
+    <Content Include="xml\complex-books.xml" />
+    <Content Include="xml\reviews-queries.xml" />
+    <Content Include="xml\simple-query2.xml" />
+    <Content Include="xml\simple-books.xml" />
+    <Content Include="xml\simple-query1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,10 +8,19 @@ namespace Bookstore.Client
 	{
 		static void Main()
 		{
-			XMLLoader.LoadSimpleBooksData(@"..\..\data\simple-books.xml");
-			XMLLoader.LoadBooksData(@"..\..\data\complex-books.xml");
-			XMLFinder.SimpleSearch(@"..\..\data\simple-query1.xml");
-			XMLFinder.SimpleSearch(@"..\..\data\simple-query2.xml");
+			//Task3
+			XMLLoader.LoadSimpleBooksData(@"..\..\xml\simple-books.xml");
+
+			//Task4
+			XMLLoader.LoadBooksData(@"..\..\xml\complex-books.xml");
+
+			//Task5
+			XMLFinder.FindBooks(@"..\..\xml\simple-query1.xml");
+			Console.WriteLine("-----------------------------------------------");
+			XMLFinder.FindBooks(@"..\..\xml\simple-query2.xml");
+
+			//Task6
+			//XMLFinder.FindReviews(@"..\..\xml\reviews-queries.xml", @"..\..\xml\reviews-search-results.xml");
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace Bookstore.DAL
 {
 	public class BookstoreDAL
 	{
-		public static Book AddBook(string title, string isbn, decimal? price, string webSite)
+		public static Book AddBook(string title, string isbn, decimal? price, string webSite, IEnumerable<string> authors)
 		{
 			Book book = new Book();
 			book.Title = title;
@@ -16,6 +16,12 @@ namespace Bookstore.DAL
 			book.WebSite = webSite;
 
 			BookstoreEntities context = new BookstoreEntities();
+
+			foreach (string authorName in authors)
+			{
+				Author author = CreateOrLoadAuthor(context, authorName);
+				book.Authors.Add(author);
+			}
 
 			context.Books.Add(book);
 			context.SaveChanges();
@@ -67,7 +73,7 @@ namespace Bookstore.DAL
 			return newAuthor;
 		}
 
-		public static List<Book> FindByTitleAuthorIsbn(string title, string authorName, string isbn)
+		public static List<Book> FindBooksByTitleAuthorIsbn(string title, string authorName, string isbn)
 		{
 			BookstoreEntities context = new BookstoreEntities();
 

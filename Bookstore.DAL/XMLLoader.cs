@@ -48,10 +48,10 @@ namespace Bookstore.DAL
 						price = decimal.Parse(priceString);
 					}
 
-					Book book = BookstoreDAL.AddBook(title, isbn, price, webSite);
+					List<string> authors = new List<string>();
+					authors.Add(authorName);
 
-					Author author = BookstoreDAL.AddAuthor(authorName);
-					book.Authors.Add(author);
+					Book book = BookstoreDAL.AddBook(title, isbn, price, webSite, authors);
 				}
 
 				transaction.Complete();
@@ -92,8 +92,7 @@ namespace Bookstore.DAL
 						price = decimal.Parse(priceString);
 					}
 
-					Book book = BookstoreDAL.AddBook(title, isbn, price, webSite);
-
+					List<string> authors = new List<string>();
 					foreach (XmlNode authorNode in bookNode.SelectNodes("authors/author"))
 					{
 						string authorName = (authorNode.InnerText.Trim());
@@ -102,9 +101,10 @@ namespace Bookstore.DAL
 							continue;
 						}
 
-						Author author = BookstoreDAL.AddAuthor(authorName);
-						book.Authors.Add(author);
+						authors.Add(authorName);
 					}
+
+					Book book = BookstoreDAL.AddBook(title, isbn, price, webSite, authors);
 
 					foreach (XmlNode reviewNode in bookNode.SelectNodes("reviews/review"))
 					{
