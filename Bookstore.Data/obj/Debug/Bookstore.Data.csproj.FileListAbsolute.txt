@@ -1,8 +1,0 @@
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\bin\Debug\Bookstore.Data.dll.config
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\bin\Debug\Bookstore.Data.dll
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\bin\Debug\Bookstore.Data.pdb
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\bin\Debug\EntityFramework.dll
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\bin\Debug\EntityFramework.xml
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\obj\Debug\Bookstore.Data.csprojResolveAssemblyReference.cache
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\obj\Debug\Bookstore.Data.dll
-D:\Work\Courses\02 - Passed\05 - Software Tecchnologies\01 - Databases\Practical Exam\Bookstore\Bookstore.Data\obj\Debug\Bookstore.Data.pdb
